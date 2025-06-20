@@ -1,0 +1,30 @@
+{
+    "sourceFile": "templates/pages/ingredient/edit.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1750425404578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750425724525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,14 @@\n \r\n {% block title %}Modifier un ingrédient{% endblock %}\r\n \r\n {% block body %}\r\n-    <div class=\"container mt-4\">\r\n-        <h4>Modifier un ingrédient</h4>\r\n+<div class=\"container mt-4\">\r\n+    <h4>Modifier un ingrédient</h4>\r\n \r\n-        {{ form_start(form) }}\r\n-            {{ form_row(form.name) }}\r\n-            {{ form_row(form.price) }}\r\n-\r\n-            <button class=\"btn btn-success mt-3\">Modifier</button>\r\n-        {{ form_end(form) }}\r\n-    </div>\r\n+    {{ form_start(form) }}\r\n+        {{ form_row(form.name) }}\r\n+        {{ form_row(form.price) }}\r\n+        <button class=\"btn btn-success mt-3\">Modifier</button>\r\n+    {{ form_end(form) }}\r\n+</div>\r\n {% endblock %}\r\n"
+                },
+                {
+                    "date": 1750425924920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,13 @@\n \r\n {% block title %}Modifier un ingrédient{% endblock %}\r\n \r\n {% block body %}\r\n-<div class=\"container mt-4\">\r\n-    <h4>Modifier un ingrédient</h4>\r\n+    <div class=\"container mt-4\">\r\n+        <h4>Modifier un ingrédient</h4>\r\n \r\n-    {{ form_start(form) }}\r\n-        {{ form_row(form.name) }}\r\n-        {{ form_row(form.price) }}\r\n-        <button class=\"btn btn-success mt-3\">Modifier</button>\r\n-    {{ form_end(form) }}\r\n-</div>\r\n+        {{ form_start(form) }}\r\n+            {{ form_widget(form) }}\r\n+            <button class=\"btn btn-primary mt-3\">Modifier</button>\r\n+        {{ form_end(form) }}\r\n+    </div>\r\n {% endblock %}\r\n"
+                },
+                {
+                    "date": 1750426416671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n {% block title %}Modifier un ingrédient{% endblock %}\r\n \r\n {% block body %}\r\n     <div class=\"container mt-4\">\r\n-        <h4>Modifier un ingrédient</h4>\r\n+        <h1>Modifier un ingrédient</h1>\r\n \r\n         {{ form_start(form) }}\r\n             {{ form_widget(form) }}\r\n             <button class=\"btn btn-primary mt-3\">Modifier</button>\r\n"
+                }
+            ],
+            "date": 1750425404578,
+            "name": "Commit-0",
+            "content": "{% extends 'base.html.twig' %}\r\n\r\n{% block title %}Modifier un ingrédient{% endblock %}\r\n\r\n{% block body %}\r\n    <div class=\"container mt-4\">\r\n        <h4>Modifier un ingrédient</h4>\r\n\r\n        {{ form_start(form) }}\r\n            {{ form_row(form.name) }}\r\n            {{ form_row(form.price) }}\r\n\r\n            <button class=\"btn btn-success mt-3\">Modifier</button>\r\n        {{ form_end(form) }}\r\n    </div>\r\n{% endblock %}\r\n"
+        }
+    ]
+}

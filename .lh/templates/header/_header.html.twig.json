@@ -1,0 +1,22 @@
+{
+    "sourceFile": "templates/header/_header.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1750407082948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750425976317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n-<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\r\n-  <div class=\"container-fluid\">\r\n-    <a class=\"navbar-brand\" href=\"#\">FirstProject</a>\r\n-    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\">\r\n-      <span class=\"navbar-toggler-icon\"></span>\r\n-    </button>\r\n-  </div>\r\n+<nav>\r\n+    <ul class=\"navbar-nav\">\r\n+        <li class=\"nav-item\">\r\n+            <a class=\"nav-link\" href=\"{{ path('app_ingredient') }}\">Ingrédients</a>\r\n+        </li>\r\n+        <li class=\"nav-item\">\r\n+            <a class=\"nav-link\" href=\"{{ path('app_home') }}\">Accueil</a>\r\n+        </li>\r\n+    </ul>\r\n </nav>\r\n"
+                }
+            ],
+            "date": 1750407082948,
+            "name": "Commit-0",
+            "content": "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\r\n  <div class=\"container-fluid\">\r\n    <a class=\"navbar-brand\" href=\"#\">FirstProject</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n  </div>\r\n</nav>\r\n"
+        }
+    ]
+}

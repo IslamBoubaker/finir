@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/Controller/HomeController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1750406937568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750407149262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,10 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n+       #[Route('/', name: 'home')]\n+    public function index(): Response\n+    {\n+        return $this->render('home/index.html.twig');\n+    }\n }\n"
+                }
+            ],
+            "date": 1750406937568,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller;\n\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\n\nclass HomeController extends AbstractController\n{\n    #[Route('/home', name: 'app_home')]\n    public function index(): Response\n    {\n        return $this->render('home/index.html.twig', [\n            'controller_name' => 'HomeController',\n        ]);\n    }\n}\n"
+        }
+    ]
+}

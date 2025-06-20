@@ -1,0 +1,30 @@
+{
+    "sourceFile": "templates/home/index.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1750406959835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750406965019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }\n </style>\n \n <div class=\"example-wrapper\">\n-<h1>Hello depuis {{ controller_name }} !</h1>\n+<h1>bonjour {{ controller_name }} !</h1>\n \n     This friendly message is coming from:\n     <ul>\n         <li>Your controller at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/src/Controller/HomeController.php'|file_link(0) }}\">src/Controller/HomeController.php</a></code></li>\n"
+                },
+                {
+                    "date": 1750407123755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,13 @@\n-{% extends 'base.html.twig' %}\n+{% extends \"base.html.twig\" %}\n \n-{% block title %}Hello HomeController!{% endblock %}\n+{% block title %} FirstProject - Accueil {% endblock %}\n \n {% block body %}\n-<style>\n-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }\n-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }\n-</style>\n-\n-<div class=\"example-wrapper\">\n-<h1>bonjour {{ controller_name }} !</h1>\n-\n-    This friendly message is coming from:\n-    <ul>\n-        <li>Your controller at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/src/Controller/HomeController.php'|file_link(0) }}\">src/Controller/HomeController.php</a></code></li>\n-        <li>Your template at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/templates/home/index.html.twig'|file_link(0) }}\">templates/home/index.html.twig</a></code></li>\n-    </ul>\n-</div>\n-{% endblock %}\n+    <div class=\"jumbotron mt-4\">\n+        <h1 class=\"display-4\">Bienvenue sur FirstProject</h1>\n+        <p class=\"lead\">FirstProject est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi-même créés.</p>\n+        <hr class=\"my-4\">\n+        <p>Pour commencer, rendez-vous sur la page d'inscription pour utiliser l'application.</p>\n+        <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Inscription</a>\n+    </div>\n+{% endblock %}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1750407919003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,8 @@\n         <h1 class=\"display-4\">Bienvenue sur FirstProject</h1>\n         <p class=\"lead\">FirstProject est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi-même créés.</p>\n         <hr class=\"my-4\">\n         <p>Pour commencer, rendez-vous sur la page d'inscription pour utiliser l'application.</p>\n-        <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Inscription</a>\n+        <a class=\"btn btn-primary btn-lg\" href=\"\n+        \" role=\"button\">Inscription</a>\n     </div>\n {% endblock %}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1750406959835,
+            "name": "Commit-0",
+            "content": "{% extends 'base.html.twig' %}\n\n{% block title %}Hello HomeController!{% endblock %}\n\n{% block body %}\n<style>\n    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }\n    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }\n</style>\n\n<div class=\"example-wrapper\">\n<h1>Hello depuis {{ controller_name }} !</h1>\n\n    This friendly message is coming from:\n    <ul>\n        <li>Your controller at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/src/Controller/HomeController.php'|file_link(0) }}\">src/Controller/HomeController.php</a></code></li>\n        <li>Your template at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/templates/home/index.html.twig'|file_link(0) }}\">templates/home/index.html.twig</a></code></li>\n    </ul>\n</div>\n{% endblock %}\n"
+        }
+    ]
+}

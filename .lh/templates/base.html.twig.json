@@ -1,0 +1,54 @@
+{
+    "sourceFile": "templates/base.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1750407020725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750407092001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,11 @@\n     <div class=\"container mt-4\">\n         {% block body %}{% endblock %}\n     </div>\n \n-    {% block javascripts %}\n+    {% block javascripts %}.\n+    {% block header %}{% include 'partials/_header.html.twig' %}{% endblock %}\n+\n         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>\n     {% endblock %}\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1750407848456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n     <div class=\"container mt-4\">\n         {% block body %}{% endblock %}\n     </div>\n \n-    {% block javascripts %}.\n-    {% block header %}{% include 'partials/_header.html.twig' %}{% endblock %}\n+    {% block javascripts %}\n+    {% block header %}{% include 'headr/_header.html.twig' %}{% endblock %}\n \n         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>\n     {% endblock %}\n </body>\n"
+                },
+                {
+                    "date": 1750407873657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,14 +9,14 @@\n     {% endblock %}\n </head>\n <body>\n     {% block header %}{% endblock %}\n-    <div class=\"container mt-4\">\n+    <div class=\"container mt-4\">{% include 'header/_header.html.twig' %}\n         {% block body %}{% endblock %}\n     </div>\n \n     {% block javascripts %}\n-    {% block header %}{% include 'headr/_header.html.twig' %}{% endblock %}\n+    {% block header %}{% endblock %}\n \n         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>\n     {% endblock %}\n </body>\n"
+                },
+                {
+                    "date": 1750407887183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,14 +9,14 @@\n     {% endblock %}\n </head>\n <body>\n     {% block header %}{% endblock %}\n-    <div class=\"container mt-4\">{% include 'header/_header.html.twig' %}\n+    <div class=\"container mt-4\">\n+    {% include 'header/_header.html.twig' %}\n         {% block body %}{% endblock %}\n     </div>\n \n     {% block javascripts %}\n-    {% block header %}{% endblock %}\n \n         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>\n     {% endblock %}\n </body>\n"
+                },
+                {
+                    "date": 1750407901444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,8 @@\n     {% endblock %}\n </head>\n <body>\n     {% block header %}{% endblock %}\n-    <div class=\"container mt-4\">\n     {% include 'header/_header.html.twig' %}\n         {% block body %}{% endblock %}\n     </div>\n \n"
+                },
+                {
+                    "date": 1750412581795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <!DOCTYPE html>\n <html>\n <head>\n     <meta charset=\"UTF-8\">\n-    <title>{% block title %}Bienvenue{% endblock %}</title>\n+    <title>{% block title %}firstproject{% endblock %}</title>\n \n     {% block stylesheets %}\n         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n     {% endblock %}\n@@ -11,9 +11,8 @@\n <body>\n     {% block header %}{% endblock %}\n     {% include 'header/_header.html.twig' %}\n         {% block body %}{% endblock %}\n-    </div>\n \n     {% block javascripts %}\n \n         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>\n"
+                },
+                {
+                    "date": 1750412588763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <!DOCTYPE html>\n <html>\n <head>\n     <meta charset=\"UTF-8\">\n-    <title>{% block title %}firstproject{% endblock %}</title>\n+    <title>{% block title %}firstproject - mes ingredient{% endblock %}</title>\n \n     {% block stylesheets %}\n         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n     {% endblock %}\n"
+                },
+                {
+                    "date": 1750422168437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n     <title>{% block title %}firstproject - mes ingredient{% endblock %}</title>\n \n     {% block stylesheets %}\n         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n+\n     {% endblock %}\n </head>\n <body>\n     {% block header %}{% endblock %}\n"
+                },
+                {
+                    "date": 1750422173723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n     <title>{% block title %}firstproject - mes ingredient{% endblock %}</title>\n \n     {% block stylesheets %}\n         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n \n+\n     {% endblock %}\n </head>\n <body>\n     {% block header %}{% endblock %}\n"
+                }
+            ],
+            "date": 1750407020725,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>{% block title %}Bienvenue{% endblock %}</title>\n\n    {% block stylesheets %}\n        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n    {% endblock %}\n</head>\n<body>\n    {% block header %}{% endblock %}\n    <div class=\"container mt-4\">\n        {% block body %}{% endblock %}\n    </div>\n\n    {% block javascripts %}\n        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>\n    {% endblock %}\n</body>\n</html>\n"
+        }
+    ]
+}

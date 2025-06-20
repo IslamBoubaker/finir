@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>{% if app.request.attributes.get('_route') == 'app_ingredient_edit' %}Modifier{% else %}Créer{% endif %} un ingrédient</h1>
+
+        {{ form_start(form) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.price) }}
+            {{ form_row(form.submit) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

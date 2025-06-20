@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un ingrédient{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h4>Modifier un ingrédient</h4>
+
+        {{ form_start(form) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.price) }}
+
+            <button class="btn btn-success mt-3">Modifier</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

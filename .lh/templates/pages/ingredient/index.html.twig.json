@@ -1,0 +1,54 @@
+{
+    "sourceFile": "templates/pages/ingredient/index.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1750412977607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750412988079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n <style>\n     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }\n     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }\n </style>\n+    <h1>Ingrédients</h1>\n \n <div class=\"example-wrapper\">\n     <h1>Hello {{ controller_name }}! ✅</h1>\n \n"
+                },
+                {
+                    "date": 1750412993892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n </style>\n     <h1>Ingrédients</h1>\n \n <div class=\"example-wrapper\">\n-    <h1>Hello {{ controller_name }}! ✅</h1>\n+    <h1>Hello </h1>\n \n     This friendly message is coming from:\n     <ul>\n         <li>Your controller at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/src/Controller/IngredientController.php'|file_link(0) }}\">src/Controller/IngredientController.php</a></code></li>\n"
+                },
+                {
+                    "date": 1750413001176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,12 @@\n <style>\n     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }\n     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }\n </style>\n-    <h1>Ingrédients</h1>\n+  \n \n <div class=\"example-wrapper\">\n-    <h1>Hello </h1>\n+    <h1>Ingrédients{{ controller_name }}! ✅</h1>\n \n     This friendly message is coming from:\n     <ul>\n         <li>Your controller at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/src/Controller/IngredientController.php'|file_link(0) }}\">src/Controller/IngredientController.php</a></code></li>\n"
+                },
+                {
+                    "date": 1750413006772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   \n \n <div class=\"example-wrapper\">\n     <h1>Ingrédients{{ controller_name }}! ✅</h1>\n-\n+ <p>Page de test Twig OK ✅</p>\n     This friendly message is coming from:\n     <ul>\n         <li>Your controller at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/src/Controller/IngredientController.php'|file_link(0) }}\">src/Controller/IngredientController.php</a></code></li>\n         <li>Your template at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/templates/ingredient/index.html.twig'|file_link(0) }}\">templates/ingredient/index.html.twig</a></code></li>\n"
+                },
+                {
+                    "date": 1750413568208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,7 @@\n \n <div class=\"example-wrapper\">\n     <h1>Ingrédients{{ controller_name }}! ✅</h1>\n  <p>Page de test Twig OK ✅</p>\n-    This friendly message is coming from:\n-    <ul>\n-        <li>Your controller at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/src/Controller/IngredientController.php'|file_link(0) }}\">src/Controller/IngredientController.php</a></code></li>\n-        <li>Your template at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/templates/ingredient/index.html.twig'|file_link(0) }}\">templates/ingredient/index.html.twig</a></code></li>\n-    </ul>\n+ \n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1750413573709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n \n <div class=\"example-wrapper\">\n     <h1>Ingrédients{{ controller_name }}! ✅</h1>\n  <p>Page de test Twig OK ✅</p>\n- \n+ {$}\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1750413578784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n \n <div class=\"example-wrapper\">\n     <h1>Ingrédients{{ controller_name }}! ✅</h1>\n  <p>Page de test Twig OK ✅</p>\n- {$}\n+ {%fpr}\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1750413583890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,10 @@\n \n <div class=\"example-wrapper\">\n     <h1>Ingrédients{{ controller_name }}! ✅</h1>\n  <p>Page de test Twig OK ✅</p>\n- {% for }\n+ {% for ingredient in ingredients %}\n+    <div class=\"card mb-3\">\n+        <div class=\"card-body\">\n+            <h5 class=\"card-title\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1750413610376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,16 +12,16 @@\n <div class=\"example-wrapper\">\n     <h1>Ingrédients{{ controller_name }}! ✅</h1>\n  <p>Page de test Twig OK ✅</p>\n  {% for ingredient in ingredients %}\n-    <div class=\"card mb-3\">\n+    {# <div class=\"card mb-3\">\n         <div class=\"card-body\">\n             <h5 class=\"card-title\">{{ ingredient.name }}</h5>\n             <p class=\"card-text\">Prix: {{ ingredient.price }} €</p>\n             <a href=\"{{ path('ingredient_show', { 'id': ingredient.id }) }}\" class=\"btn btn-primary\">Voir</a>\n             <a href=\"{{ path('ingredient_edit', { 'id': ingredient.id }) }}\" class=\"btn btn-secondary\">Modifier</a>\n             <form action=\"{{ path('ingredient_delete', { 'id': ingredient.id }) }}\" method=\"post\" style=\"display:inline;\">\n                 <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ ingredient.id) }}\">\n-                <button type=\"submit\" class=\"btn btn-danger\">Supprimer</button>\n+                <button type=\"submit\" class=\"btn btn-danger\">Supprimer</button> #}\n             </form> \n </div>\n {% endblock %}\n"
+                }
+            ],
+            "date": 1750412977607,
+            "name": "Commit-0",
+            "content": "{% extends 'base.html.twig' %}\n\n{% block title %}Liste des ingrédients{% endblock %}\n\n{% block body %}\n<style>\n    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }\n    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }\n</style>\n\n<div class=\"example-wrapper\">\n    <h1>Hello {{ controller_name }}! ✅</h1>\n\n    This friendly message is coming from:\n    <ul>\n        <li>Your controller at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/src/Controller/IngredientController.php'|file_link(0) }}\">src/Controller/IngredientController.php</a></code></li>\n        <li>Your template at <code><a href=\"{{ 'C:/Users/EAA/Desktop/symfonytuto/firstproject/templates/ingredient/index.html.twig'|file_link(0) }}\">templates/ingredient/index.html.twig</a></code></li>\n    </ul>\n</div>\n{% endblock %}\n"
+        }
+    ]
+}

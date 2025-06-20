@@ -1,0 +1,82 @@
+{
+    "sourceFile": "src/Entity/Ingredient.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1750409221760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750409229278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     #[ORM\\Column]\n     private ?float $price = null;\n \n     #[ORM\\Column]\n-    private ?\\DateTimeImmutable $createdAt = null;\n+    private ?\\DateTimeImmutable $CreadAT = null;\n \n     public function getId(): ?int\n     {\n         return $this->id;\n@@ -50,16 +50,16 @@\n \n         return $this;\n     }\n \n-    public function getcreatedAt(): ?\\DateTimeImmutable\n+    public function getCreadAT(): ?\\DateTimeImmutable\n     {\n-        return $this->createdAt;\n+        return $this->CreadAT;\n     }\n \n-    public function setcreatedAt(\\DateTimeImmutable $createdAt): static\n+    public function setCreadAT(\\DateTimeImmutable $CreadAT): static\n     {\n-        $this->createdAt = $createdAt;\n+        $this->CreadAT = $CreadAT;\n \n         return $this;\n     }\n }\n"
+                },
+                {
+                    "date": 1750409240995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     #[ORM\\Column]\n     private ?float $price = null;\n \n     #[ORM\\Column]\n-    private ?\\DateTimeImmutable $CreadAT = null;\n+    private ?\\DateTimeImmutable $CreatedAt = null;\n \n     public function getId(): ?int\n     {\n         return $this->id;\n@@ -50,16 +50,16 @@\n \n         return $this;\n     }\n \n-    public function getCreadAT(): ?\\DateTimeImmutable\n+    public function getCreatedAt(): ?\\DateTimeImmutable\n     {\n-        return $this->CreadAT;\n+        return $this->CreatedAt;\n     }\n \n-    public function setCreadAT(\\DateTimeImmutable $CreadAT): static\n+    public function setCreatedAt(\\DateTimeImmutable $CreatedAt): static\n     {\n-        $this->CreadAT = $CreadAT;\n+        $this->CreatedAt = $CreatedAt;\n \n         return $this;\n     }\n }\n"
+                },
+                {
+                    "date": 1750409333767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     #[ORM\\GeneratedValue]\n     #[ORM\\Column]\n     private ?int $id = null;\n \n-    #[ORM\\Column(length: 255)]\n+    #[ORM\\Column(length: 50)]\n     private ?string $nom = null;\n \n     #[ORM\\Column]\n     private ?float $price = null;\n"
+                },
+                {
+                    "date": 1750409341138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     #[ORM\\Column]\n     private ?int $id = null;\n \n     #[ORM\\Column(length: 50)]\n-    private ?string $nom = null;\n+    private ?string $name = null;\n \n     #[ORM\\Column]\n     private ?float $price = null;\n \n@@ -28,9 +28,9 @@\n     }\n \n     public function getNom(): ?string\n     {\n-        return $this->nom;\n+        return $this->name;\n     }\n \n     public function setNom(string $nom): static\n     {\n"
+                },
+                {
+                    "date": 1750409351721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,65 @@\n+<?php\n+\n+namespace App\\Entity;\n+\n+use App\\Repository\\IngredientRepository;\n+use Doctrine\\ORM\\Mapping as ORM;\n+\n+#[ORM\\Entity(repositoryClass: IngredientRepository::class)]\n+class Ingredient\n+{\n+    #[ORM\\Id]\n+    #[ORM\\GeneratedValue]\n+    #[ORM\\Column]\n+    private ?int $id = null;\n+\n+    #[ORM\\Column(length: 50)]\n+    private ?string $name = null;\n+\n+    #[ORM\\Column]\n+    private ?float $price = null;\n+\n+    #[ORM\\Column]\n+    private ?\\DateTimeImmutable $CreatedAt = null;\n+\n+    public function getId(): ?int\n+    {\n+        return $this->id;\n+    }\n+\n+    public function getname(): ?string\n+    {\n+        return $this->name;\n+    }\n+\n+    public function setNom(string $nom): static\n+    {\n+        $this->nom = $name;\n+\n+        return $this;\n+    }\n+\n+    public function getPrice(): ?float\n+    {\n+        return $this->price;\n+    }\n+\n+    public function setPrice(float $price): static\n+    {\n+        $this->price = $price;\n+\n+        return $this;\n+    }\n+\n+    public function getCreatedAt(): ?\\DateTimeImmutable\n+    {\n+        return $this->CreatedAt;\n+    }\n+\n+    public function setCreatedAt(\\DateTimeImmutable $CreatedAt): static\n+    {\n+        $this->CreatedAt = $CreatedAt;\n+\n+        return $this;\n+    }\n+}\n"
+                },
+                {
+                    "date": 1750409358740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     {\n         return $this->name;\n     }\n \n-    public function setNom(string $nom): static\n+    public function setname(string $name): static\n     {\n         $this->nom = $name;\n \n         return $this;\n@@ -62,69 +62,4 @@\n \n         return $this;\n     }\n }\n-<?php\n-\n-namespace App\\Entity;\n-\n-use App\\Repository\\IngredientRepository;\n-use Doctrine\\ORM\\Mapping as ORM;\n-\n-#[ORM\\Entity(repositoryClass: IngredientRepository::class)]\n-class Ingredient\n-{\n-    #[ORM\\Id]\n-    #[ORM\\GeneratedValue]\n-    #[ORM\\Column]\n-    private ?int $id = null;\n-\n-    #[ORM\\Column(length: 50)]\n-    private ?string $name = null;\n-\n-    #[ORM\\Column]\n-    private ?float $price = null;\n-\n-    #[ORM\\Column]\n-    private ?\\DateTimeImmutable $CreatedAt = null;\n-\n-    public function getId(): ?int\n-    {\n-        return $this->id;\n-    }\n-\n-    public function getNom(): ?string\n-    {\n-        return $this->name;\n-    }\n-\n-    public function setNom(string $nom): static\n-    {\n-        $this->nom = $nom;\n-\n-        return $this;\n-    }\n-\n-    public function getPrice(): ?float\n-    {\n-        return $this->price;\n-    }\n-\n-    public function setPrice(float $price): static\n-    {\n-        $this->price = $price;\n-\n-        return $this;\n-    }\n-\n-    public function getCreatedAt(): ?\\DateTimeImmutable\n-    {\n-        return $this->CreatedAt;\n-    }\n-\n-    public function setCreatedAt(\\DateTimeImmutable $CreatedAt): static\n-    {\n-        $this->CreatedAt = $CreatedAt;\n-\n-        return $this;\n-    }\n-}\n"
+                },
+                {
+                    "date": 1750409587964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n use App\\Repository\\IngredientRepository;\n use Doctrine\\ORM\\Mapping as ORM;\n \n+\n #[ORM\\Entity(repositoryClass: IngredientRepository::class)]\n class Ingredient\n {\n     #[ORM\\Id]\n@@ -33,9 +34,9 @@\n     }\n \n     public function setname(string $name): static\n     {\n-        $this->nom = $name;\n+        $this->name = $name;\n \n         return $this;\n     }\n \n"
+                },
+                {
+                    "date": 1750409674940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n namespace App\\Entity;\n \n use App\\Repository\\IngredientRepository;\n use Doctrine\\ORM\\Mapping as ORM;\n+use Symfony\\Component\\Validator\\Constraints as Assert;\n \n \n #[ORM\\Entity(repositoryClass: IngredientRepository::class)]\n class Ingredient\n@@ -14,8 +15,9 @@\n     #[ORM\\Column]\n     private ?int $id = null;\n \n     #[ORM\\Column(length: 50)]\n+    \n     private ?string $name = null;\n \n     #[ORM\\Column]\n     private ?float $price = null;\n"
+                },
+                {
+                    "date": 1750409687886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,13 +15,16 @@\n     #[ORM\\Column]\n     private ?int $id = null;\n \n     #[ORM\\Column(length: 50)]\n-    \n+     #[Assert\\NotBlank]\n+    #[Assert\\Length(min: 2, max: 50)]\n     private ?string $name = null;\n \n     #[ORM\\Column]\n-    private ?float $price = null;\n+   #[Assert\\NotNull]\n+    #[Assert\\Positive]\n+    #[Assert\\LessThan(200)]    private ?float $price = null;\n \n     #[ORM\\Column]\n     private ?\\DateTimeImmutable $CreatedAt = null;\n \n"
+                },
+                {
+                    "date": 1750409696306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,12 +22,14 @@\n \n     #[ORM\\Column]\n    #[Assert\\NotNull]\n     #[Assert\\Positive]\n-    #[Assert\\LessThan(200)]    private ?float $price = null;\n+    #[Assert\\LessThan(200)]    \n+    private ?float $price = null;\n \n     #[ORM\\Column]\n-    private ?\\DateTimeImmutable $CreatedAt = null;\n+    #[Assert\\NotNull]\n+        private ?\\DateTimeImmutable $CreatedAt = null;\n \n     public function getId(): ?int\n     {\n         return $this->id;\n"
+                },
+                {
+                    "date": 1750410053248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     private ?float $price = null;\n \n     #[ORM\\Column]\n     #[Assert\\NotNull]\n-        private ?\\DateTimeImmutable $CreatedAt = null;\n+  private ?\\DateTimeImmutable $CreatedAt = null;\n \n     public function getId(): ?int\n     {\n         return $this->id;\n@@ -70,4 +70,5 @@\n \n         return $this;\n     }\n }\n+\n"
+                },
+                {
+                    "date": 1750410059638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,6 +69,10 @@\n         $this->CreatedAt = $CreatedAt;\n \n         return $this;\n     }\n+    public function __construct()\n+    {\n+        $this->CreatedAt = new \\DateTimeImmutable();\n+    }\n }\n \n"
+                },
+                {
+                    "date": 1750424157381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n use App\\Repository\\IngredientRepository;\n use Doctrine\\ORM\\Mapping as ORM;\n use Symfony\\Component\\Validator\\Constraints as Assert;\n+use Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity;\n \n \n #[ORM\\Entity(repositoryClass: IngredientRepository::class)]\n class Ingredient\n"
+                },
+                {
+                    "date": 1750424167797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n \n \n #[ORM\\Entity(repositoryClass: IngredientRepository::class)]\n class Ingredient\n-{\n+{#[UniqueEntity('name')]\n+\n     #[ORM\\Id]\n     #[ORM\\GeneratedValue]\n     #[ORM\\Column]\n     private ?int $id = null;\n"
+                },
+                {
+                    "date": 1750424173868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n #[ORM\\Entity(repositoryClass: IngredientRepository::class)]\n class Ingredient\n-{#[UniqueEntity('name')]\n+    {#[UniqueEntity('name')]\n \n     #[ORM\\Id]\n     #[ORM\\GeneratedValue]\n     #[ORM\\Column]\n"
+                },
+                {
+                    "date": 1750424180099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,80 @@\n+<?php\n+\n+namespace App\\Entity;\n+\n+use App\\Repository\\IngredientRepository;\n+use Doctrine\\ORM\\Mapping as ORM;\n+use Symfony\\Component\\Validator\\Constraints as Assert;\n+use Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity;\n+\n+\n+#[ORM\\Entity(repositoryClass: IngredientRepository::class)]\n+class Ingredient\n+#[UniqueEntity('name')]\n+\n+    #[ORM\\Id]\n+    #[ORM\\GeneratedValue]\n+    #[ORM\\Column]\n+    private ?int $id = null;\n+\n+    #[ORM\\Column(length: 50)]\n+     #[Assert\\NotBlank]\n+    #[Assert\\Length(min: 2, max: 50)]\n+    private ?string $name = null;\n+\n+    #[ORM\\Column]\n+   #[Assert\\NotNull]\n+    #[Assert\\Positive]\n+    #[Assert\\LessThan(200)]    \n+    private ?float $price = null;\n+\n+    #[ORM\\Column]\n+    #[Assert\\NotNull]\n+  private ?\\DateTimeImmutable $CreatedAt = null;\n+\n+    public function getId(): ?int\n+    {\n+        return $this->id;\n+    }\n+\n+    public function getname(): ?string\n+    {\n+        return $this->name;\n+    }\n+\n+    public function setname(string $name): static\n+    {\n+        $this->name = $name;\n+\n+        return $this;\n+    }\n+\n+    public function getPrice(): ?float\n+    {\n+        return $this->price;\n+    }\n+\n+    public function setPrice(float $price): static\n+    {\n+        $this->price = $price;\n+\n+        return $this;\n+    }\n+\n+    public function getCreatedAt(): ?\\DateTimeImmutable\n+    {\n+        return $this->CreatedAt;\n+    }\n+\n+    public function setCreatedAt(\\DateTimeImmutable $CreatedAt): static\n+    {\n+        $this->CreatedAt = $CreatedAt;\n+\n+        return $this;\n+    }\n+    public function __construct()\n+    {\n+        $this->CreatedAt = new \\DateTimeImmutable();\n+    }\n+}\n+\n"
+                }
+            ],
+            "date": 1750409221760,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Entity;\n\nuse App\\Repository\\IngredientRepository;\nuse Doctrine\\ORM\\Mapping as ORM;\n\n#[ORM\\Entity(repositoryClass: IngredientRepository::class)]\nclass Ingredient\n{\n    #[ORM\\Id]\n    #[ORM\\GeneratedValue]\n    #[ORM\\Column]\n    private ?int $id = null;\n\n    #[ORM\\Column(length: 255)]\n    private ?string $nom = null;\n\n    #[ORM\\Column]\n    private ?float $price = null;\n\n    #[ORM\\Column]\n    private ?\\DateTimeImmutable $createdAt = null;\n\n    public function getId(): ?int\n    {\n        return $this->id;\n    }\n\n    public function getNom(): ?string\n    {\n        return $this->nom;\n    }\n\n    public function setNom(string $nom): static\n    {\n        $this->nom = $nom;\n\n        return $this;\n    }\n\n    public function getPrice(): ?float\n    {\n        return $this->price;\n    }\n\n    public function setPrice(float $price): static\n    {\n        $this->price = $price;\n\n        return $this;\n    }\n\n    public function getcreatedAt(): ?\\DateTimeImmutable\n    {\n        return $this->createdAt;\n    }\n\n    public function setcreatedAt(\\DateTimeImmutable $createdAt): static\n    {\n        $this->createdAt = $createdAt;\n\n        return $this;\n    }\n}\n"
+        }
+    ]
+}

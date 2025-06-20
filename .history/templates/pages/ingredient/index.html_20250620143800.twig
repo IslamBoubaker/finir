@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des ingrédients{% endblock %}
+
+{% block body %}
+    <h1>Liste des ingrédients</h1>
+
+    <div class="text-end">
+        <h4>{{ ingredients.getTotalItemCount }} ingrédients au total</h4>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ingredient is not empt %}
+            <tr>
+                <td>{{ ingredient.name }}</td>
+                <td>{{ ingredient.price }} €</td>
+                <td>
+                    <a href="#">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun ingrédient trouvé.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="navigation d-flex justify-content-center">
+        {{ knp_pagination_render(ingredients) }}
+    </div>
+{% endblock %}

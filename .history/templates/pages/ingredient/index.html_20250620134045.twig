@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des ingrédients{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Liste des ingrédients</h1>
+
+      {% for ingredient in ingredients %}
+        <div>
+        <p>{{ ingredient.name }} </p>
+        </div>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

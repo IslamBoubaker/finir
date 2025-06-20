@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/Controller/IngredientController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1750412133165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750412141215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n {\n     #[Route('/ingredient', name: 'app_ingredient')]\n     public function index(): Response\n     {\n-        return $this->render('t/index.html.twig', [\n+        return $this->render('pages/home.html.twig', [\n             'controller_name' => 'IngredientController',\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1750412177095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n {\n     #[Route('/ingredient', name: 'app_ingredient')]\n     public function index(): Response\n     {\n-        return $this->render('pages/home.html.twig', [\n+        return $this->render('pages/ingredient/home.html.twig', [\n             'controller_name' => 'IngredientController',\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1750412196641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n {\n     #[Route('/ingredient', name: 'app_ingredient')]\n     public function index(): Response\n     {\n-        return $this->render('pages/ingredient/home.html.twig', [\n+        return $this->render('/index.html.twig', [\n             'controller_name' => 'IngredientController',\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1750412204421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n {\n     #[Route('/ingredient', name: 'app_ingredient')]\n     public function index(): Response\n     {\n-        return $this->render('/index.html.twig', [\n+        return $this->render('/ingredient/index.html.twig', [\n             'controller_name' => 'IngredientController',\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1750412210811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n {\n     #[Route('/ingredient', name: 'app_ingredient')]\n     public function index(): Response\n     {\n-        return $this->render('/ingredient/index.html.twig', [\n+        return $this->render('pages/ingredient/index.html.twig', [\n             'controller_name' => 'IngredientController',\n         ]);\n     }\n }\n+\n"
+                },
+                {
+                    "date": 1750412312943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,25 @@\n-<?php\n+use App\\Entity\\Ingredient;\n+use App\\Form\\IngredientType;\n+use Doctrine\\ORM\\EntityManagerInterface;\n+use Symfony\\Component\\HttpFoundation\\Request;\n+use Symfony\\Component\\HttpFoundation\\Response;\n \n-namespace App\\Controller;\n+#[Route('/ingredient/new', name: 'ingredient_new')]\n+public function new(Request $request, EntityManagerInterface $em): Response\n+{\n+    $ingredient = new Ingredient();\n \n-use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n-use Symfony\\Component\\HttpFoundation\\Response;\n-use Symfony\\Component\\Routing\\Annotation\\Route;\n+    $form = $this->createForm(IngredientType::class, $ingredient);\n+    $form->handleRequest($request);\n \n-class IngredientController extends AbstractController\n-{\n-    #[Route('/ingredient', name: 'app_ingredient')]\n-    public function index(): Response\n-    {\n-        return $this->render('pages/ingredient/index.html.twig', [\n-            'controller_name' => 'IngredientController',\n-        ]);\n+    if ($form->isSubmitted() && $form->isValid()) {\n+        $em->persist($ingredient);\n+        $em->flush();\n+\n+        return $this->redirectToRoute('app_ingredient');\n     }\n+\n+    return $this->render('pages/ingredient/new.html.twig', [\n+        'form' => $form->createView(),\n+    ]);\n }\n-\n"
+                },
+                {
+                    "date": 1750412318151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+<?php\n+\n use App\\Entity\\Ingredient;\n use App\\Form\\IngredientType;\n use Doctrine\\ORM\\EntityManagerInterface;\n use Symfony\\Component\\HttpFoundation\\Request;\n"
+                },
+                {
+                    "date": 1750412323725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n use Symfony\\Component\\HttpFoundation\\Request;\n use Symfony\\Component\\HttpFoundation\\Response;\n \n #[Route('/ingredient/new', name: 'ingredient_new')]  \n-\n+{}\n public function new(Request $request, EntityManagerInterface $em): Response\n {\n     $ingredient = new Ingredient();\n \n"
+                },
+                {
+                    "date": 1750412396447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,34 @@\n+<?php\n+\n+namespace App\\Controller;\n+\n+use App\\Entity\\Ingredient;\n+use Doctrine\\ORM\\EntityManagerInterface;\n+use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n+use Symfony\\Component\\BrowserKit\\Request;\n+use Symfony\\Component\\HttpFoundation\\Response;\n+use Symfony\\Component\\Routing\\Annotation\\Route;\n+\n+class IngredientController extends AbstractController\n+{\n+#[Route('/ingredient/new', name: 'ingredient_new')]\n+public function new(Request $request, EntityManagerInterface $em): Response\n+{\n+    $ingredient = new Ingredient();\n+\n+    $form = $this->createForm(IngredientType::class, $ingredient);\n+    $form->handleRequest($request);\n+\n+    if ($form->isSubmitted() && $form->isValid()) {\n+        $em->persist($ingredient);\n+        $em->flush();\n+\n+        return $this->redirectToRoute('app_ingredient');\n+    }\n+\n+    return $this->render('pages/ingredient/new.html.twig', [\n+        'form' => $form->createView(),\n+    ]);\n+}\n+\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1750412133165,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller;\n\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\n\nclass IngredientController extends AbstractController\n{\n    #[Route('/ingredient', name: 'app_ingredient')]\n    public function index(): Response\n    {\n        return $this->render('t/index.html.twig', [\n            'controller_name' => 'IngredientController',\n        ]);\n    }\n}\n"
+        }
+    ]
+}

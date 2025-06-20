@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/DataFixtures/AppFixtures.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1750409931191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750409936957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,14 @@\n class AppFixtures extends Fixture\n {\n     public function load(ObjectManager $manager): void\n     {\n-      $\n+      $ingredients = [\n+            ['name' => 'Tomato', 'price' => 1.20],\n+            ['name' => 'Lettuce', 'price' => 0.80],\n+            ['name' => 'Cheese', 'price' => 2.50],\n+            ['name' => 'Bacon', 'price' => 3.00],\n+            ['name' => 'Chicken', 'price' => 4.00],\n+        ];\n         $manager->flush();\n     }\n }\n"
+                },
+                {
+                    "date": 1750409946097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,14 +8,8 @@\n class AppFixtures extends Fixture\n {\n     public function load(ObjectManager $manager): void\n     {\n-      $ingredients = [\n-            ['name' => 'Tomato', 'price' => 1.20],\n-            ['name' => 'Lettuce', 'price' => 0.80],\n-            ['name' => 'Cheese', 'price' => 2.50],\n-            ['name' => 'Bacon', 'price' => 3.00],\n-            ['name' => 'Chicken', 'price' => 4.00],\n-        ];\n+      $ingredients = new \n         $manager->flush();\n     }\n }\n"
+                },
+                {
+                    "date": 1750409952530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,16 @@\n <?php\n \n namespace App\\DataFixtures;\n \n+use App\\Entity\\Ingredient;\n use Doctrine\\Bundle\\FixturesBundle\\Fixture;\n use Doctrine\\Persistence\\ObjectManager;\n \n class AppFixtures extends Fixture\n {\n     public function load(ObjectManager $manager): void\n     {\n-      $ingredients = new \n+      $ingredients = new Ingredient\n         $manager->flush();\n     }\n }\n"
+                },
+                {
+                    "date": 1750409965024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n class AppFixtures extends Fixture\n {\n     public function load(ObjectManager $manager): void\n     {\n-      $ingredients = new Ingredient\n+      $ingredients = new Ingredient();\n+        $ingredients->setname('ingred');\n         $manager->flush();\n     }\n }\n"
+                },
+                {
+                    "date": 1750409970661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n {\n     public function load(ObjectManager $manager): void\n     {\n       $ingredients = new Ingredient();\n-        $ingredients->setname('ingred');\n+        $ingredients->setname('ingredient ');\n         $manager->flush();\n     }\n }\n"
+                },
+                {
+                    "date": 1750409976644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n {\n     public function load(ObjectManager $manager): void\n     {\n       $ingredients = new Ingredient();\n-        $ingredients->setname('ingredient ');\n+        $ingredients->setname('ingredient #1');\n+        \n         $manager->flush();\n     }\n }\n"
+                },
+                {
+                    "date": 1750409983806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n     public function load(ObjectManager $manager): void\n     {\n       $ingredients = new Ingredient();\n         $ingredients->setname('ingredient #1');\n-        \n+        $ingredients->setPrice(10.99);\n         $manager->flush();\n     }\n }\n"
+                },
+                {
+                    "date": 1750409990163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,8 @@\n     {\n       $ingredients = new Ingredient();\n         $ingredients->setname('ingredient #1');\n         $ingredients->setPrice(10.99);  \n+        \n         $manager->flush();\n     }\n }\n"
+                },
+                {
+                    "date": 1750410143738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n         $ingredients->setPrice(10.99);  \n         $manager->persist($ingredients);\n         $manager->flush();\n     }\n+    \n     use Faker\\Factory;\n \n public function load(ObjectManager $manager): void\n {\n"
+                }
+            ],
+            "date": 1750409931191,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\DataFixtures;\n\nuse Doctrine\\Bundle\\FixturesBundle\\Fixture;\nuse Doctrine\\Persistence\\ObjectManager;\n\nclass AppFixtures extends Fixture\n{\n    public function load(ObjectManager $manager): void\n    {\n      $\n        $manager->flush();\n    }\n}\n"
+        }
+    ]
+}
